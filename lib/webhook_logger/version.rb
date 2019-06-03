@@ -1,0 +1,3 @@
+module WebhookLogger
+  VERSION = '0.1.0'
+end
