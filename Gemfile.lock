@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     webhook_logger (0.1.0)
-      rails (~> 5.2.3)
+      rails (~> 5)
 
 GEM
   remote: https://rubygems.org/
