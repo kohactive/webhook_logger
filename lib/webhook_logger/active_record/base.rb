@@ -4,7 +4,7 @@ module WebhookLogger
 
     module ClassMethods
       def has_webhooks
-        has_many :webhooks, as: :webhookable, dependent: :delete_all
+        has_many :inbound_webhooks, as: :webhookable, dependent: :delete_all, class_name: "WebhookLogger::InboundWebhook"
       end
     end
   end
