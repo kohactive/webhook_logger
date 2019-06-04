@@ -44,4 +44,19 @@ module WebhookLogger
       end
     end
   end
+
+
+  describe 'with payload' do
+    let(:payload) { fixture_file_upload(Rails.root.join('../fixtures/stripe/charge.json')) }
+    subject { FactoryBot.build(:inbound_webhook, payload: payload) }
+
+    it 'attaches the payload file' do
+      expect { subject.save }.to change(ActiveStorage::Attachment, :count).by(1)
+    end
+
+    it 'has a payload' do
+      subject.save
+      expect(subject.payload).to be_present
+    end
+  end
 end

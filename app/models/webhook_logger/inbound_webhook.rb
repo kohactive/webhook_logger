@@ -1,5 +1,6 @@
 module WebhookLogger
   class InboundWebhook < ApplicationRecord
+    has_one_attached :payload
     belongs_to :webhookable, polymorphic: true
 
     def successful?
